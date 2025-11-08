@@ -12,11 +12,11 @@ h1 {
     text-align: center;
 }
 
-.name-row, .contacts-row, .dob {
+.name-row, .contacts-row, .dob{
     display: flex;
     gap: 30px;
 }
-    .dob{
+    .dob {
         width: 47%;
     }
 .name-row .field, .contacts-row .field {
@@ -56,4 +56,8 @@ button {
     button:active {
         transform: translateY(1px);
     }
+
+.h-captcha {
+    margin-bottom: 10px;
+}
 

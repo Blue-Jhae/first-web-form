@@ -10,6 +10,7 @@
     <h1>Gimme yer infermatey</h1>
 
     <form action="https://api.web3forms.com/submit" method="POST">
+
     <input type="hidden" name="access_key" value="8d5c6bbc-2e29-4a77-91b5-26c4172095ab">
     
         <div class="name-row">
@@ -117,6 +118,10 @@
                     <input id="bday" type="date" name="bday" required>
             </div>
         </div>
+
+        <div class="h-captcha" data-captcha="true"></div>
+        <script src="https://web3forms.com/client/script.js" async defer></script>
+
         <button type="submit">Submit</button>
 
         <!-- Plays a sound effect, and confetti upon submission -->
@@ -133,6 +138,6 @@
                 }, 3000);
             });
         </script>
-</form>
+    </form>
 </body>
 </html>
