@@ -1,0 +1,59 @@
+* {
+    font-family: monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: azure;
+}
+
+h1 {
+    text-align: center;
+}
+
+.name-row, .contacts-row, .dob {
+    display: flex;
+    gap: 30px;
+}
+    .dob{
+        width: 47%;
+    }
+.name-row .field, .contacts-row .field {
+    flex: 1;
+}
+
+form {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+label {
+    margin-bottom: 4px;
+    font-weight: 1000;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin: 0 0 20px 0;
+    border-radius: 6px;
+    box-shadow: 1px 2px black;
+}
+
+button {
+    border-radius: 6px;
+    box-shadow: 1px 2px black;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 600;
+    line-height: 1;
+}
+    button:hover {
+        filter: brightness(1.05)
+    }
+    button:active {
+        transform: translateY(1px);
+    }
+

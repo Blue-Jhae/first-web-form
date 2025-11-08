@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>First Web Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Gimme yer infermatey</h1>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="8d5c6bbc-2e29-4a77-91b5-26c4172095ab">
+    
+        <div class="name-row">
+            <div class="field">
+                <label for="first">First Name:</label>
+                <input id="first" type="text" name="first" required>
+            </div>
+
+            <div class="field">
+                <label for="last">Last Name:</label>
+                <input id="last" type="text" name="last" required>
+            </div>
+        </div>
+
+        <!-- JavaScript Practice, cycles placeholders every 5 seconds -->
+        <script>
+            const firstnames = [
+                "John",
+                "Mario",
+                "Jane",
+                "Robin",
+                "Jesse",
+                "James",
+                "Ash",
+                "Kevin",
+                "Ryan",
+                "David",
+                "Jerry",
+                "Lloyd",
+                "Jay"
+            ];
+            const lastnames = [
+                "Doe",
+                "Nguyen",
+                "Sanders",
+                "Dickinson",
+                "Smith",
+                "Rodgers",
+                "Cheng",
+                "De Leon",
+                "Cao",
+                "Li",
+                "Balthazar"
+            ];
+            const firstInput = document.getElementById("first");
+            const lastInput = document.getElementById("last");
+            function changePlaceholder() {
+                const randomFirst = firstnames[Math.floor(Math.random() * firstnames.length)];
+                const randomLast = lastnames[Math.floor(Math.random() * lastnames.length)];
+                    // Joke rule
+                    if (randomFirst === "Mario") {
+                    firstInput.placeholder = "Mario";
+                    lastInput.placeholder = "Mario";
+                    } 
+                    else if (randomFirst === "Ash") {
+                    firstInput.placeholder = "Ash";
+                    lastInput.placeholder = "Ketchum";
+                    }
+                    else if (randomFirst === "John") {
+                    firstInput.placeholder = "John";
+                    lastInput.placeholder = "Shedletsky";
+                    }
+                    else {
+                    firstInput.placeholder = randomFirst;
+                    lastInput.placeholder = randomLast;
+                    }
+            }
+            setInterval(changePlaceholder, 5000);
+            changePlaceholder();
+        </script>
+    
+        <div class="contacts-row">
+            <div class="field">
+                <label for="email">E-mail:</label>
+                <input id="email" type="email" name="email" required>
+            </div> 
+
+            <div class="field">
+                <label for="tel">Phone:</label>
+                <input id="tel" type="tel" name="tel" placeholder="+x(xxx)xxx-xxxx" required>
+            </div>
+        </div>
+
+        <!-- I probably could've put them all in one script but that sounds like a pain to troubleshoot -->
+        <script>
+            const emails = [
+                "my.electronicmail@mail.com",
+                "my.electronicmail@gmail.com",
+                "my.electronicmail@yahoo.com",
+                "my.electronicmail@hotmail.com",
+                "my.electronicmail@mymail.com"
+            ]
+            const emailInput = document.getElementById("email");
+            function changePlaceholder() {
+                const randomEmail = emails[Math.floor(Math.random() * emails.length)];
+                emailInput.placeholder = randomEmail;   
+            }
+            setInterval(changePlaceholder, 5000);
+            changePlaceholder();
+        </script> 
+        
+        <div class="dob">
+            <div class="field">
+                    <label for="bday">Date Of Birth:</label>
+                    <input id="bday" type="date" name="bday" required>
+            </div>
+        </div>
+        <button type="submit">Submit</button>
+
+        <!-- Plays a sound effect, and confetti upon submission -->
+        <audio id="submit-celeb" src="hurray.mp3" preload="auto"></audio>
+        <script>
+            const form = document.querySelector("form");
+            const submitCeleb = document.getElementById("submit-celeb");
+
+            form.addEventListener("submit", (event) => {
+                event.preventDefault();
+                submitCeleb.play();
+                setTimeout(() => {
+                form.submit();
+                }, 3000);
+            });
+        </script>
+</form>
+</body>
+</html>
